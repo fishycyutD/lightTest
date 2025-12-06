@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Light Test</title>
+        <style>
+            body {
+                background-color: darkgreen;
+            }
+            #output, #input {
+                width: 20%;
+                height: 40%;
+                margin: 20px;
+                border: none;
+                cursor: pointer;
+            }
+            #output {
+                position: fixed;
+                left: 50px;
+            }
+            #input {
+                position: fixed;
+                right: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="output" style="background-color: black;"></button>
+        <button style="background-color: red;" id="input"></button>
+        <script>
+            let output = document.getElementById("output");
+            let input = document.getElementById("input");
+
+            input.addEventListener("click", function() {
+                if (output.style.backgroundColor === "black") {
+                    output.style.backgroundColor = "white";
+                } else {
+                    output.style.backgroundColor = "black";
+                }
+            });
+        </script>
+    </body>
+</html>
