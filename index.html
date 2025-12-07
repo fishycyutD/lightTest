@@ -6,29 +6,36 @@
             body {
                 background-color: darkgreen;
             }
-            #output, #input {
+            #output {
+                position: fixed;
+                left: 50px;
+                margin: 20px;
+                border: none;
+                cursor: pointer;
+            }
+            #input {
+                position: fixed;
+                right: 50px;
                 width: 20%;
                 height: 40%;
                 margin: 20px;
                 border: none;
                 cursor: pointer;
             }
-            #output {
-                position: fixed;
-                left: 50px;
-            }
-            #input {
-                position: fixed;
-                right: 50px;
-            }
         </style>
     </head>
     <body>
-        <button id="output" style="background-color: black;"></button>
+        <button id="output" style="background-color: black; width: 100px; height: 100px;"></button>
         <button style="background-color: red;" id="input"></button>
+
+        <button id="smaller">smaller</button>
+        <button id="bigger">bigger</button>
         <script>
             let output = document.getElementById("output");
             let input = document.getElementById("input");
+            let smaller = document.getElementById("smaller");
+            let bigger = document.getElementById("bigger");
+            let size = 100;
 
             input.addEventListener("click", function() {
                 if (output.style.backgroundColor === "black") {
@@ -36,6 +43,16 @@
                 } else {
                     output.style.backgroundColor = "black";
                 }
+            });
+            smaller.addEventListener("click", () => {
+                size--;
+                output.style.width = size + "px";
+                output.style.height = size + "px";
+            });
+            bigger.addEventListener("click", () => {
+                size++;
+                output.style.width = size + "px";
+                output.style.height = size + "px";
             });
         </script>
     </body>
